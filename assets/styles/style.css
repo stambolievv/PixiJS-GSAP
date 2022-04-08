@@ -1,0 +1,94 @@
+:root {
+  --color-light-green: #00cc1b;
+  --color-dark-green: #4dc000;
+  --color-light-blue: #d0d8f0;
+  --color-light-gray: #606870;
+  --color-dark-gray: #202830;
+  --color-white: #ffffff;
+  --color-transparent: #3c40433a;
+  --header-height: 8rem;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: Consolas, monospace;
+  text-decoration: none;
+  user-select: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+.main {
+  min-height: calc(100% - var(--header-height));
+  width: 100vw;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  min-height: var(--header-height);
+
+  color: var(--color-light-green);
+  font-size: 4em;
+  border-bottom: solid 0.5rem var(--color-light-gray);
+  background-color: var(--color-dark-gray);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  width: 100vw;
+  height: 80vh;
+}
+.project {
+  margin: 2rem;
+  box-shadow: var(--color-transparent) 0px 10px 30px 5px;
+}
+.project-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+.project-link {
+  margin: 0.8rem 0 1rem;
+  padding: 0.3rem 4rem;
+  background-color: var(--color-light-blue);
+  color: var(--color-dark-gray);
+
+  border-radius: 0.2rem;
+  box-shadow: var(--color-transparent) 0px 1px 2px 0px,
+    var(--color-transparent) 0px 1px 3px 1px;
+  cursor: pointer;
+}
+.project-link:hover {
+  background-color: var(--color-light-gray);
+}
+.project-name {
+  display: inline-block;
+
+  padding: 0.3rem 1rem;
+  width: 100%;
+
+  background-color: var(--color-dark-green);
+  color: var(--color-dark-gray);
+  font-size: 1.25em;
+  font-weight: 800;
+  text-align: left;
+
+  border-radius: 0.2rem;
+}
+.project-note {
+  padding: 2rem;
+  color: var(--color-dark-gray);
+  text-align: center;
+  width: 100%;
+}
