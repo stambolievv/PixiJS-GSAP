@@ -12,7 +12,11 @@ const config = {
     backgroundAlpha: true
   },
   scrolling: {
-    multiplier: 5
+    multiplier: 5,
+    blur: {
+      applyAfter: 5,
+      horizontal: true
+    }
   }
 };
 
