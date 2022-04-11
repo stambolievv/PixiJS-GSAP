@@ -12,7 +12,7 @@ export default class Controller {
     this.circles.push(new Circle(this.config, this.stage, mouse));
   }
 
-  updateCircle(deltaTime) {
+  updateCircles(deltaTime) {
     this.circles.forEach(circle => {
       circle.update(deltaTime);
 
