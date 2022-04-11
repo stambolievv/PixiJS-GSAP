@@ -71,6 +71,5 @@ app.loader
 
     app.ticker.add((deltaTime) => {
       controller.updateCandy(deltaTime);
-      controller.updateScore();
     });
   });
