@@ -12,7 +12,7 @@ const mouse = { x: undefined, y: undefined };
 
 app.ticker.add((deltaTime) => {
   controller.createCircle( mouse);
-  controller.updateCircle(deltaTime);
+  controller.updateCircles(deltaTime);
 });
 
 
