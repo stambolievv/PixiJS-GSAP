@@ -50,7 +50,7 @@ export default class Controller {
 
       if (sprite.x + sprite.width / 2 <= 0) { sprite.x += this.clipboard.width * this.sprites.length; }
 
-      sprite.filters = sliderValue >= 5 ? [new PIXI.filters.BlurFilter(sliderValue)] : [];
+      sprite.filters = sliderValue >= this.config.scrolling.blur.applyAfter ? [new PIXI.filters.BlurFilterPass(this.config.scrolling.blur.horizontal, sliderValue, 1)] : [];
     });
   }
 }
