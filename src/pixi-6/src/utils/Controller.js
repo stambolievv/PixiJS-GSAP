@@ -37,7 +37,7 @@ export default class Controller {
       if (candy.isOutOfBounds) {
         this.candies.splice(index, 1);
         candy.texture.destroy();
-        this.scorePoints += 1;
+        this._updateScore();
       }
     });
   }
@@ -48,9 +48,11 @@ export default class Controller {
     this.score.position.set(this.config.score.position.x * this.config.renderer.width, this.config.score.position.y * this.config.renderer.height);
 
     this.stage.addChild(this.score);
+    this._updateScore(true);
   }
 
-  updateScore() {
+  _updateScore(init = false) {
+    if(!init){ this.scorePoints += 1; }
     this.score.text = 'SCORE: ' + this.scorePoints;
     this.score.updateText();
   }
