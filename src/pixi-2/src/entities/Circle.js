@@ -18,9 +18,6 @@ export default class Circle {
   }
 
   update(deltaTime) {
-    this.graphic.pivot.set(this.pos.x, this.pos.y);
-    this.graphic.position.set(this.pos.x, this.pos.y);
-
     this.graphic.scale.x = this.graphic.scale.y -= (this.config.circle.scaling * 0.01) * deltaTime;
   }
 
@@ -45,6 +42,10 @@ export default class Circle {
     this.graphic.alpha = this.config.circle.alpha;
     this.graphic.drawCircle(this.pos.x, this.pos.y, this.dim.r);
     this.graphic.endFill();
+    
+    this.graphic.pivot.set(this.pos.x, this.pos.y);
+    this.graphic.position.set(this.pos.x, this.pos.y);
+    
     this.stage.addChild(this.graphic);
   }
 }
