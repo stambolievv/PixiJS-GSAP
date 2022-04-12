@@ -1,2 +1,0 @@
-add resize event
-confing in Controller class to be private and change _ to # ?
