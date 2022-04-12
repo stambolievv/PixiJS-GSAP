@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: arial;
+  color:#7CFC00;
+  font-weight: normal;
+  font-size: 3em;
+  margin: 20px;
+}
+body{
+  background-color: #333;
+  text-align: center;
+}
+#parent {
+  height: 100%;
+  padding:0px;
+}
+.child {
+  height: 350px;
+  margin: 0px;
+  background-color:#7CFC00;
+  float: left;
+  box-shadow: 0 0 0 4px  #333;
+  font-family:arial;
+  font-size: 1.2em;
+  text-align: center;
+  overflow:hidden;
+  padding-top: 20px;
+}
+
+#DiacoDesignLink,#pens{
+  color: #fff;
+}

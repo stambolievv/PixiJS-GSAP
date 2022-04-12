@@ -1,18 +1,17 @@
 class Rocket {
   constructor(config, stage, texture, position, data) {
-    this.config = config;
-    this.stage = stage;
-    this.texture = texture;
+    this._config = config;
+    this._stage = stage;
     this.position = position;
-
     this.name = data.name;
     this.fuel = data.fuel;
+
+    this.sprite = null;
+    this.running = false;
     this.meters = 0;
 
-    this.running = false;
-
-    this._setup();
-    this.stage.addChild(this.texture, this.name);
+    this._setup(texture);
+    this._stage.addChild(this.sprite, this.name);
   }
 
   start() {
@@ -26,8 +25,8 @@ class Rocket {
     }
 
     if (this.running) {
-      this.position.y = this.texture.position.y = this.name.position.y -= (this.config.rocket.flying.speed * deltaTime);
-      this.fuel -= (this.config.rocket.flying.consumption * this.config.rocket.flying.speed) * deltaTime;
+      this.position.y = this.sprite.position.y = this.name.position.y -= (this._config.rocket.flying.speed * deltaTime);
+      this.fuel -= (this._config.rocket.flying.consumption * this._config.rocket.flying.speed) * deltaTime;
       this.meters += Math.floor(deltaTime);
     }
   }
@@ -41,18 +40,20 @@ class Rocket {
       .moveTo(this.position.x, this.position.y)
       .lineTo(0, this.position.y);
 
-    this.config.rocket.style.fill = randomColor;
-    const text = new PIXI.Text(`Height: ${this.meters}m`, this.config.rocket.style);
+    this._config.rocket.style.fill = randomColor;
+    const text = new PIXI.Text(`Height: ${this.meters}m`, this._config.rocket.style);
     text.anchor.set(0.5, 0);
     text.position.set(this.position.x / 2, this.position.y);
 
-    this.stage.addChild(graphic, text);
+    this._stage.addChild(graphic, text);
     return;
   }
 
-  _setup() {
-    this.texture.anchor.set(0.5, 0);
-    this.texture.position.set(this.position.x, this.position.y);
+  _setup(texture) {
+    this.sprite = new PIXI.Sprite(texture);
+
+    this.sprite.anchor.set(0.5, 0);
+    this.sprite.position.set(this.position.x, this.position.y);
 
     this.name = new PIXI.Text(this.name);
     this.name.anchor.set(0.5, 1);

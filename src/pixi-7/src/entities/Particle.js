@@ -1,47 +1,54 @@
 export default class Particle {
-  constructor(config, stage, sprite) {
-    this.config = config;
-    this.stage = stage;
+  constructor(config, stage, texture) {
+    this._config = config;
+    this._stage = stage;
 
-    this.texture = null;
+    this.sprite = null;
     this.lifespan = null;
+    this.touched = false;
 
     this.velocity = {
       x: Math.random() * 2 - 1,
       y: Math.random() * 2 - 1
     };
 
-    this._setup(sprite);
-    this.stage.addChild(this.texture);
+    this._setup(texture);
+    this._stage.addChild(this.sprite);
   }
 
   get lifeOver() {
     return this.lifespan <= 0;
   }
 
-  get _touchingTopOrBottom() {
-    return (this.texture.position.x + this.velocity.x <= 0 || this.texture.position.x + this.texture.width + this.velocity.x >= this.config.renderer.width);
+  get _touchingLeftOrRight() {
+    return (this.sprite.position.x + this.velocity.x <= 0 || this.sprite.position.x + this.sprite.width + this.velocity.x >= this._config.renderer.width);
   }
 
-  get _touchingLeftOrRight() {
-    return (this.texture.position.y + this.velocity.y <= 0 || this.texture.position.y + this.texture.height + this.velocity.y >= this.config.renderer.height);
+  get _touchingTopOrBottom() {
+    return (this.sprite.position.y + this.velocity.y <= 0 || this.sprite.position.y + this.sprite.height + this.velocity.y >= this._config.renderer.height);
   }
 
   update(deltaTime) {
     this.lifespan -= 1 * deltaTime;
 
-    this.texture.position.x += (this.velocity.x * this.config.particle.speed) * deltaTime;
-    this.texture.position.y += (this.velocity.y * this.config.particle.speed) * deltaTime;
+    this.sprite.position.x += (this.velocity.x * this._config.particle.speed) * deltaTime;
+    this.sprite.position.y += (this.velocity.y * this._config.particle.speed) * deltaTime;
 
-    if (this._touchingTopOrBottom) { this.velocity.x = this.velocity.x * -1; }
-    if (this._touchingLeftOrRight) { this.velocity.y = this.velocity.y * -1; }
+    if (this._touchingTopOrBottom) {
+      this.velocity.y = this.velocity.y * -1;
+      this.touched = true;
+    }
+    if (this._touchingLeftOrRight) {
+      this.velocity.x = this.velocity.x * -1;
+      this.touched = true;
+    }
   }
 
-  _setup(sprite) {
-    this.texture = new PIXI.Sprite(sprite);
+  _setup(texture) {
+    this.sprite = new PIXI.Sprite(texture);
 
-    this.texture.position.set(Math.random() * (this.config.renderer.width - this.texture.width), Math.random() * (this.config.renderer.height - this.texture.height));
+    this.sprite.position.set(Math.random() * (this._config.renderer.width - this.sprite.width), Math.random() * (this._config.renderer.height - this.sprite.height));
 
-    this.lifespan = Math.floor(Math.random() * (this.config.particle.lifespan.max - this.config.particle.lifespan.min) + this.config.particle.lifespan.min);
+    this.lifespan = Math.floor(Math.random() * (this._config.particle.lifespan.max - this._config.particle.lifespan.min) + this._config.particle.lifespan.min);
   }
 }

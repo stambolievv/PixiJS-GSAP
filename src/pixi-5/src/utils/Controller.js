@@ -3,8 +3,8 @@ import { Rocket, Merlin } from '../entities/Rocket.js';
 
 export default class Controller {
   constructor(config, stage) {
-    this.config = config;
-    this.stage = stage;
+    this._config = config;
+    this._stage = stage;
 
     this.rockets = [];
   }
@@ -15,13 +15,13 @@ export default class Controller {
     const rocketsData = await request('https://api.spacexdata.com/v2/rockets');
 
     rocketsData.forEach((rocket, index, data) => {
-      const sprite = new PIXI.Sprite(assets[rocket.type]);
+      const texture = assets[rocket.type]
 
-      const spawnPoint = { x: ((this.config.renderer.width - data.length * 100) / data.length) * (index + 1), y: this.config.renderer.height - sprite.height };
+      const spawnPoint = { x: ((this._config.renderer.width - data.length * (texture.width / 2)) / data.length) * (index + 1), y: this._config.renderer.height - texture.height };
       const rocketData = { 'name': rocket.name, 'fuel': rocket.first_stage.fuel_amount_tons + rocket.second_stage.fuel_amount_tons };
 
-      if (rocket.type == 'rocket') { return this.rockets.push(new Rocket(this.config, this.stage, sprite, spawnPoint, rocketData)); }
-      if (rocket.type == 'merlin') { return this.rockets.push(new Merlin(this.config, this.stage, sprite, spawnPoint, rocketData)); }
+      if (rocket.type == 'rocket') { return this.rockets.push(new Rocket(this._config, this._stage, texture, spawnPoint, rocketData)); }
+      if (rocket.type == 'merlin') { return this.rockets.push(new Merlin(this._config, this._stage, texture, spawnPoint, rocketData)); }
     });
 
     return this._start();

@@ -1,13 +1,13 @@
 export default class Circle {
   constructor(config, stage, mouse) {
-    this.config = config;
-    this.stage = stage;
+    this._config = config;
+    this._stage = stage;
     this.mouse = mouse;
 
     this.graphic = new PIXI.Graphics();
 
     this.pos = this._setPosition();
-    this.dim = { r: this.config.circle.radius };
+    this.dim = { r: this._config.circle.radius };
     this.color = `0x${Math.floor(Math.random() * 16777215).toString(16)}`;
 
     this._draw();
@@ -18,17 +18,17 @@ export default class Circle {
   }
 
   update(deltaTime) {
-    this.graphic.scale.x = this.graphic.scale.y -= (this.config.circle.scaling * 0.01) * deltaTime;
+    this.graphic.scale.x = this.graphic.scale.y -= (this._config.circle.scaling * 0.01) * deltaTime;
   }
 
   _setPosition() {
     const max = {
-      x: this.mouse.x + this.config.circle.offset,
-      y: this.mouse.y + this.config.circle.offset
+      x: this.mouse.x + this._config.circle.offset,
+      y: this.mouse.y + this._config.circle.offset
     };
     const min = {
-      x: this.mouse.x - this.config.circle.offset,
-      y: this.mouse.y - this.config.circle.offset
+      x: this.mouse.x - this._config.circle.offset,
+      y: this.mouse.y - this._config.circle.offset
     };
 
     return {
@@ -39,13 +39,13 @@ export default class Circle {
 
   _draw() {
     this.graphic.beginFill(this.color);
-    this.graphic.alpha = this.config.circle.alpha;
+    this.graphic.alpha = this._config.circle.alpha;
     this.graphic.drawCircle(this.pos.x, this.pos.y, this.dim.r);
     this.graphic.endFill();
-    
+
     this.graphic.pivot.set(this.pos.x, this.pos.y);
     this.graphic.position.set(this.pos.x, this.pos.y);
-    
-    this.stage.addChild(this.graphic);
+
+    this._stage.addChild(this.graphic);
   }
 }

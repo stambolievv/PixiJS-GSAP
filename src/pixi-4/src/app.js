@@ -9,7 +9,6 @@ const stage = new PIXI.Container();
 app.stage.addChild(stage);
 
 const controller = new Controller(config, stage);
-let sliderValue = document.getElementById('slider').value;
 
 app.loader
   .add('clipboard', './assets/images/Clipboard01.png')
@@ -23,9 +22,8 @@ app.loader
   .add('./assets/images/submarine.png')
   .add('./assets/images/web.png')
   .load(({ resources }) => {
+    controller.createSlider();
     controller.createMovieFrame(app.renderer, resources);
 
-    app.ticker.add((deltaTime) => controller.updateMovieFrame(deltaTime, sliderValue));
+    app.ticker.add((deltaTime) => controller.updateMovieFrame(deltaTime));
   });
-
-document.getElementById('slider').addEventListener('change', (e) => sliderValue = e.target.value);

@@ -2,14 +2,14 @@ import Circle from '../entities/Circle.js';
 
 export default class Controller {
   constructor(config, stage) {
-    this.config = config;
-    this.stage = stage;
+    this._config = config;
+    this._stage = stage;
 
     this.circles = [];
   }
 
   createCircle(mouse) {
-    this.circles.push(new Circle(this.config, this.stage, mouse));
+    this.circles.push(new Circle(this._config, this._stage, mouse));
   }
 
   updateCircles(deltaTime) {
