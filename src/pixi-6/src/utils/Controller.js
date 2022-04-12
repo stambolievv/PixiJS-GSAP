@@ -3,8 +3,8 @@ import Candy from '../entities/Candy.js';
 
 export default class Controller {
   constructor(config, stage) {
-    this.config = config;
-    this.stage = stage;
+    this._config = config;
+    this._stage = stage;
 
     this.pinata = null;
     this.candies = [];
@@ -13,7 +13,7 @@ export default class Controller {
   }
 
   createPinata(resources) {
-    
+
     const { pokenata, candies } = Object.entries(resources).reduce((a, [key, value]) => {
       if (key == 'pokenata') {
         Object.assign(a, { [key]: value.texture });
@@ -27,43 +27,44 @@ export default class Controller {
       return a;
     }, {});
 
-    this.pinata = new Pinata(this.config, this.stage, pokenata);
+    this.pinata = new Pinata(this._config, this._stage, pokenata);
     this._hitPinata(candies);
   }
 
   updateCandy(deltaTime) {
     this.candies.forEach((candy, index) => {
       candy.update(deltaTime);
+
       if (candy.isOutOfBounds) {
         this.candies.splice(index, 1);
-        candy.texture.destroy();
+        candy.sprite.destroy();
         this._updateScore();
       }
     });
   }
 
   setScore() {
-    this.score = new PIXI.Text('', this.config.score.style);
-    this.score.anchor.set(this.config.score.position.x, this.config.score.position.y);
-    this.score.position.set(this.config.score.position.x * this.config.renderer.width, this.config.score.position.y * this.config.renderer.height);
+    this.score = new PIXI.Text('', this._config.score.style);
+    this.score.anchor.set(this._config.score.position.x, this._config.score.position.y);
+    this.score.position.set(this._config.score.position.x * this._config.renderer.width, this._config.score.position.y * this._config.renderer.height);
 
-    this.stage.addChild(this.score);
+    this._stage.addChild(this.score);
     this._updateScore(true);
   }
 
   _updateScore(init = false) {
-    if(!init){ this.scorePoints += 1; }
+    if (!init) { this.scorePoints += 1; }
     this.score.text = 'SCORE: ' + this.scorePoints;
     this.score.updateText();
   }
 
   _hitPinata(candies) {
-    this.pinata.texture.on('click', () => {
-      if (this.pinata.texture.rotation == 0) {
+    this.pinata.sprite.on('click', () => {
+      if (this.pinata.sprite.rotation == 0) {
         gsap.to(
-          this.pinata.texture,
-          this.config.pinata.wiggle.duration,
-          { rotation: this.config.pinata.wiggle.rotation, yoyo: true, repeat: this.config.pinata.wiggle.repeat }
+          this.pinata.sprite,
+          this._config.pinata.wiggle.duration,
+          { rotation: this._config.pinata.wiggle.rotation, yoyo: true, repeat: this._config.pinata.wiggle.repeat }
         );
         this._createCandy(candies);
       }
@@ -71,13 +72,13 @@ export default class Controller {
   }
 
 
-  _createCandy(sprites) {
-    const randomIndex = Math.floor(Math.random() * sprites.length);
+  _createCandy(textures) {
+    const randomIndex = Math.floor(Math.random() * textures.length);
 
-    const sprite = sprites[randomIndex];
-    const spawnPoint = { x: this.pinata.texture.x, y: this.pinata.texture.position.y + (this.pinata.texture.height * (1 - this.pinata.texture.anchor.y)) };
+    const texture = textures[randomIndex];
+    const spawnPoint = { x: this.pinata.sprite.x, y: this.pinata.sprite.position.y + (this.pinata.sprite.height * (1 - this.pinata.sprite.anchor.y)) };
 
-    const candy = new Candy(this.config, this.stage, sprite, spawnPoint);
+    const candy = new Candy(this._config, this._stage, texture, spawnPoint);
     this.candies.push(candy);
   }
 }

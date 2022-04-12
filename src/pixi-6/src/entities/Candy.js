@@ -1,37 +1,37 @@
 export default class Candy {
-  constructor(config, stage, sprite, position) {
-    this.config = config;
-    this.stage = stage;
+  constructor(config, stage, texture, position) {
+    this._config = config;
+    this._stage = stage;
 
 
-    this.texture = null;
+    this.sprite = null;
     this.velocity = null;
 
-    this._setup(sprite, position);
-    this.stage.addChild(this.texture);
+    this._setup(texture, position);
+    this._stage.addChild(this.sprite);
   }
 
   get isOutOfBounds() {
-    const biggerSide = this.texture.width > this.texture.height ? this.texture.width : this.texture.height;
-    return this.texture.position.y - biggerSide - this.velocity > this.config.renderer.height;
+    const biggerSide = this.sprite.width > this.sprite.height ? this.sprite.width : this.sprite.height;
+    return this.sprite.position.y - biggerSide - this.velocity > this._config.renderer.height;
   }
 
   update(deltaTime) {
-    this.texture.rotation += this.velocity * deltaTime * 0.01;
-    this.texture.position.y += this.velocity * deltaTime;
+    this.sprite.rotation += this.velocity * deltaTime * 0.01;
+    this.sprite.position.y += this.velocity * deltaTime;
   }
 
-  _setup(sprite, position) {
+  _setup(texture, position) {
     const spawnPoint = {
-      x: Math.floor(Math.random() * ((position.x + this.config.candy.fall.offset) - (position.x - this.config.candy.fall.offset)) + (position.x - this.config.candy.fall.offset)),
+      x: Math.floor(Math.random() * ((position.x + this._config.candy.fall.offset) - (position.x - this._config.candy.fall.offset)) + (position.x - this._config.candy.fall.offset)),
       y: position.y
     };
 
-    this.texture = new PIXI.Sprite(sprite);
+    this.sprite = new PIXI.Sprite(texture);
 
-    this.texture.anchor.set(0.5, 0.5);
-    this.texture.position.set(spawnPoint.x, spawnPoint.y);
+    this.sprite.anchor.set(0.5, 0.5);
+    this.sprite.position.set(spawnPoint.x, spawnPoint.y);
 
-    this.velocity = Math.random() * (this.config.candy.fall.max - this.config.candy.fall.min) + this.config.candy.fall.min;
+    this.velocity = Math.random() * (this._config.candy.fall.max - this._config.candy.fall.min) + this._config.candy.fall.min;
   }
 }
