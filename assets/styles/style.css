@@ -27,7 +27,6 @@
 
 .main {
   min-height: calc(100% - var(--header-height));
-  width: 100vw;
 }
 
 .header {
@@ -38,7 +37,7 @@
   min-height: var(--header-height);
 
   color: var(--color-light-green);
-  font-size: 4em;
+  font-size: 3vw;
   border-bottom: solid 0.5rem var(--color-light-gray);
   background-color: var(--color-dark-gray);
 }
@@ -46,21 +45,22 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
-  width: 100vw;
-  height: 80vh;
 }
 .project {
-  margin: 2rem;
+  margin: 1.3rem 2rem;
+
   box-shadow: var(--color-transparent) 0px 10px 30px 5px;
 }
 .project-links {
   display: flex;
   justify-content: space-evenly;
+
+  min-width: 0;
 }
 .project-link {
   margin: 0.8rem 0 1rem;
   padding: 0.3rem 4rem;
+
   background-color: var(--color-light-blue);
   color: var(--color-dark-gray);
 
@@ -75,8 +75,8 @@
 .project-name {
   display: inline-block;
 
-  padding: 0.3rem 1rem;
   width: 100%;
+  padding: 0.3rem 1rem;
 
   background-color: var(--color-dark-green);
   color: var(--color-dark-gray);
@@ -87,8 +87,34 @@
   border-radius: 0.2rem;
 }
 .project-note {
+  width: 100%;
   padding: 2rem;
+
   color: var(--color-dark-gray);
   text-align: center;
-  width: 100%;
+  font-size: 1vw;
+}
+
+@media only screen and (max-width: 1260px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .header {
+    font-size: 4vw;
+  }
+  .project-note {
+    font-size: 2vw;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .header {
+    font-size: 5vw;
+  }
+  .project-note {
+    font-size: 3vw;
+  }
 }

@@ -1,0 +1,17 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  background-image: url("../images/background.png");
+  background-repeat: repeat;
+}
