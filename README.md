@@ -1,2 +1,2 @@
-# PixiJS
-⚔️ PixiJS Mini Projects ⚔️
+# PixiJS & GSAP
+⚔️ PixiJS & GSAP Mini Projects ⚔️
