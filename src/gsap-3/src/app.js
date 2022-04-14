@@ -1,19 +1,22 @@
 import config from './config.js';
 
 const [gap, ...dots] = createElements();
-startSineWave(gap);
+const tweens = [];
 
+startSineWave(gap);
 function startSineWave(gap) {
-  // initial state
-  gsap.to(dots, { duration: 0, y: 0, backgroundColor: '#a7ce01', onComplete: animate });
+  gsap.to(dots, { duration: 0, y: 0, backgroundColor: config.dots.color.from, onComplete: animate });
 
   function animate() {
     let count = 0;
     const checkForRestart = () => { if (++count == dots.length) { startSineWave(gap); } };
 
+    tweens.forEach(tween => tween.kill());
+    tweens.length = 0;
+
     dots.forEach((dot, index) => {
-      if (dot._gsap) { gsap.killTweensOf(dot); }
-      gsap.to(dot, { delay: (index * gap) / 2, y: 50, backgroundColor: 'orange', repeat: 1, yoyo: true, onComplete: checkForRestart });
+      const tween = gsap.to(dot, { delay: (index * gap) / 2, y: config.dots.jump, backgroundColor: config.dots.color.to, repeat: 1, yoyo: true, onComplete: checkForRestart });
+      tweens.push(tween);
     });
   }
 }
@@ -31,7 +34,7 @@ function createElements() {
     option.value = option.textContent = select;
     dropDown.appendChild(option);
   });
-  Array.from({ length: config.dots }, () => {
+  Array.from({ length: config.dots.length }, () => {
     const div = document.createElement('div');
     div.classList.add('dot');
     dotsContainer.appendChild(div);

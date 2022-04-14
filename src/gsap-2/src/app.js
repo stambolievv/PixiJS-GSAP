@@ -11,4 +11,4 @@ timeLine
   .to(cow, { duration: config.cow.levitate, y: ufo._gsap.y })
   .to(beam, { duration: config.beam.wentOut, opacity: 0 })
   .to(cow, { opacity: 0 })
-  .to(ufo, config.ufo.outgoing, { x: -config.ufo.offset });
+  .to(ufo, { duration: config.ufo.outgoing, x: -config.ufo.offset });

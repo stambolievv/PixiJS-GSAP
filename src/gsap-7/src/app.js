@@ -34,6 +34,7 @@ btnPause.addEventListener('click', () => {
 
 const btnReverse = document.querySelector('.btn-reverse');
 btnReverse.addEventListener('click', () => {
+  btnPause.textContent = 'pause';
   shipItTimeline.reverse().then(reset);
 });
 
