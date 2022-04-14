@@ -1,6 +1,6 @@
 :root {
-  --color-light-green: #00cc1b;
-  --color-dark-green: #4dc000;
+  --color-green: #4dc000;
+  --color-yellow: #f0c000;
   --color-light-blue: #d0d8f0;
   --color-light-gray: #606870;
   --color-dark-gray: #202830;
@@ -36,7 +36,7 @@
 
   min-height: var(--header-height);
 
-  color: var(--color-light-green);
+  color: var(--color-green);
   font-size: 3vw;
   border-bottom: solid 0.5rem var(--color-light-gray);
   background-color: var(--color-dark-gray);
@@ -78,7 +78,6 @@
   width: 100%;
   padding: 0.3rem 1rem;
 
-  background-color: var(--color-dark-green);
   color: var(--color-dark-gray);
   font-size: 1.25em;
   font-weight: 800;
@@ -93,6 +92,13 @@
   color: var(--color-dark-gray);
   text-align: center;
   font-size: 1vw;
+}
+
+.project-gsap .project-name {
+  background-color: var(--color-green);
+}
+.project-pixi .project-name {
+  background-color: var(--color-yellow);
 }
 
 @media only screen and (max-width: 1260px) {
