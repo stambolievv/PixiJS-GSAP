@@ -1,0 +1,33 @@
+html,
+body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#fidget-spinner {
+  cursor: move;
+}
+
+html,
+body {
+  background: #f6fea1;
+}
+
+.circle {
+  fill: transparent;
+}
+
+.bearing {
+  fill: #f08e6b;
+}
+
+.spinner {
+  fill: #ff7575;
+}

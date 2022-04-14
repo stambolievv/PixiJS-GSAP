@@ -1,0 +1,38 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color:#f1f1f1;
+}
+
+#container {
+  position:absolute;
+  margin:auto;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  width:600px;
+  height:600px;
+  border-radius:50%;
+  border:2px solid #aaa;
+  background-color: #eee;
+  text-align:center;
+  line-height:600px;
+  font-size:12px;
+}
+
+#draggable {
+  position:absolute;
+  width:100px;
+  height:100px;
+  left:250px;
+  top:250px;
+  border-radius:50%;
+  
+  background-color:#88CE02;
+  color:#000;
+  text-align:center;
+  font-weight:bold;
+  font-size:16px;
+  line-height:100px;
+}
+

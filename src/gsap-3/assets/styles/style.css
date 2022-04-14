@@ -1,0 +1,28 @@
+body {
+  background-color: #333;
+  font-family: arial;
+}
+
+.input-container {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.dots-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dot {
+  float: left;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background-color: #a7ce01;
+  margin: 5px;
+}

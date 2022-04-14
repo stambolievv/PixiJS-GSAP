@@ -1,0 +1,44 @@
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(45deg, #ffe1c9, #fde4cf);
+}
+
+.swiper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+}
+
+.swiper .swipe-btn .arrow {
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  fill: #f4ece1;
+
+  transform: matrix(1, 0, 0, 1, 16, 11);
+}
+
+.swiper .swipe-end {
+  fill-rule: evenodd;
+  stroke-width: 2px;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  fill: none;
+
+  transform: matrix(1, 0, 0, 1, 235, 12);
+}
+
+.unlock {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+}
