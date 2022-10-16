@@ -3,30 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="google" content="notranslate" />
-    <link rel="stylesheet" href="./assets/styles/style.css">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
     <title>GSAP Project 2</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <!-- Icon -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon"/>
+    <!-- Meta -->
+    <meta name="title" content="GSAP Project 2" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="GSAP Project 2" />
+    <meta name="application-name" content="GSAP Project 2" />
+    <meta name="description" content="Simple timeline. Similar to animation." />
+    <!-- Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" defer></script>
-    <script type="module" src="./src/app.js"></script>
+    <script type="module" src="./src/app.js" defer></script>
   </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" width="1900px" height="420px">
       <defs >
-        <radialGradient id="bgGradOne" cx="89.8325579%" cy="80.3078803%" r="94.8186403%" fx="89.8325579%" fy="80.3078803%" gradientTransform="scale(.5691 1) rotate(-140.38 1.238 .68)">
+        <radialgradient id="bgGradOne" cx="89.8325579%" cy="80.3078803%" r="94.8186403%" fx="89.8325579%" fy="80.3078803%" gradienttransform="scale(.5691 1) rotate(-140.38 1.238 .68)">
           <stop stop-color="#FE8C5F" offset="0%"/>
           <stop stop-color="#42193B" offset="100%"/>
-        </radialGradient>
-        <radialGradient id="bgGradTwo" cx="89.8325579%" cy="80.3078803%" r="94.8186403%" fx="89.8325579%" fy="80.3078803%" gradientTransform="matrix(-.43714 -.63588 .36016 -.7718 1.002 1.994)">
+        </radialgradient>
+        <radialgradient id="bgGradTwo" cx="89.8325579%" cy="80.3078803%" r="94.8186403%" fx="89.8325579%" fy="80.3078803%" gradienttransform="matrix(-.43714 -.63588 .36016 -.7718 1.002 1.994)">
           <stop stop-color="#FE5F5F" stop-opacity=".748613" offset="0%"/>
           <stop stop-color="#42193B" offset="100%"/>
-        </radialGradient>
-        <linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="100%">
+        </radialgradient>
+        <lineargradient id="c" x1="50%" x2="50%" y1="0%" y2="100%">
           <stop stop-color="#32FFF8" offset="0%"/>
           <stop stop-color="#17FFED" stop-opacity="0" offset="100%"/>
-        </linearGradient>
+        </lineargradient>
       </defs>
       <g fill="none" fill-rule="evenodd">
         <path fill="#241335" d="M0 2h736v418H0z"/>
@@ -64,6 +74,6 @@
         </g>
         <path fill="#000" id="mountains" d="M0 280.088235l32.4483874 7.453586c11.4227995 2.623884 23.3767684 1.662768 34.2336155-2.752432L76 281c23.3333333 12 36.333333 20 39 24 1.473841 2.210762 34-9 43-7 3.284328.729851 7.702168 10.060987 27 18 10.942182 4.501548 23.162859 9.640849 33.480028 6.881123.768846-.205658 1.608837.167301 2.519972 1.118877 7.295072 1.621839 11.295072 3.342428 12 5.161765 1.034316 2.669448 13.702817 3.268106 38.005502 1.795974h.000001c9.322771-.564726 18.346908 3.395221 24.243422 10.638433 3.028749 3.72048 9.279107 6.536462 18.751075 8.447946 21.557299 4.350354 54.890632 5.394472 100 3.132353 81.165375-15.653303 144.165375-33.055264 189-52.205883 22-9.397059 49.90375 3.585486 78 0 5.501883-.702119 9.271065-1.974004 11.307545-3.815653 2.640901-2.388245 6.653822-2.413508 9.324581-.058701L738 329.161765V420H0V280.088235z"/>
       </g>
-    </svg>    
+    </svg>
   </body>
 </html>

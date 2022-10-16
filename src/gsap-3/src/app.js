@@ -9,7 +9,7 @@ function startSineWave(gap) {
 
   function animate() {
     let count = 0;
-    const checkForRestart = () => { if (++count == dots.length) { startSineWave(gap); } };
+    const checkForRestart = () => { if (++count === dots.length) { startSineWave(gap); } };
 
     tweens.forEach(tween => tween.kill());
     tweens.length = 0;
@@ -26,7 +26,7 @@ function createElements() {
   const inputContainer = document.querySelector('.input-container');
 
   const dropDown = document.createElement('select');
-  dropDown.addEventListener('change', (e) => startSineWave(e.target.value));
+  dropDown.addEventListener('change', e => startSineWave(e.target.value));
   inputContainer.appendChild(dropDown);
 
   config.selection.forEach(select => {
@@ -34,6 +34,7 @@ function createElements() {
     option.value = option.textContent = select;
     dropDown.appendChild(option);
   });
+
   Array.from({ length: config.dots.length }, () => {
     const div = document.createElement('div');
     div.classList.add('dot');

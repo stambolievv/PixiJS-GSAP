@@ -13,17 +13,14 @@ export default class Controller {
   }
 
   createPinata(resources) {
-
     const { pokenata, candies } = Object.entries(resources).reduce((a, [key, value]) => {
-      if (key == 'pokenata') {
+      if (key === 'pokenata') {
         Object.assign(a, { [key]: value.texture });
       } else {
-        if (a.hasOwnProperty('candies')) {
-          a['candies'].push(value.texture);
-        } else {
-          a['candies'] = [value.texture];
-        }
+        if (a.hasOwnProperty('candies')) a['candies'].push(value.texture);
+        else a['candies'] = [value.texture];
       }
+
       return a;
     }, {});
 
@@ -53,19 +50,20 @@ export default class Controller {
   }
 
   _updateScore(init = false) {
-    if (!init) { this.scorePoints += 1; }
+    if (!init) this.scorePoints += 1;
     this.score.text = 'SCORE: ' + this.scorePoints;
     this.score.updateText();
   }
 
   _hitPinata(candies) {
     this.pinata.sprite.on('click', () => {
-      if (this.pinata.sprite.rotation == 0) {
-        gsap.to(
-          this.pinata.sprite,
-          this._config.pinata.wiggle.duration,
-          { rotation: this._config.pinata.wiggle.rotation, yoyo: true, repeat: this._config.pinata.wiggle.repeat }
-        );
+      if (this.pinata.sprite.rotation === 0) {
+        gsap.to(this.pinata.sprite, {
+          duration: this._config.pinata.wiggle.duration,
+          rotation: this._config.pinata.wiggle.rotation,
+          yoyo: true,
+          repeat: this._config.pinata.wiggle.repeat
+        });
         this._createCandy(candies);
       }
     }, { once: true });

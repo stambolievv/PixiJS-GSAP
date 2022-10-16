@@ -69,7 +69,5 @@ app.loader
     controller.createPinata(resources);
     controller.setScore();
 
-    app.ticker.add((deltaTime) => {
-      controller.updateCandy(deltaTime);
-    });
+    app.ticker.add(deltaTime => controller.updateCandy(deltaTime));
   });

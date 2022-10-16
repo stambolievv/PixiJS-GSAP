@@ -20,25 +20,17 @@ export default class Particle {
     return this.lifespan <= 0;
   }
 
-  get _touchingLeftOrRight() {
-    return (this.sprite.position.x + this.velocity.x <= 0 || this.sprite.position.x + this.sprite.width + this.velocity.x >= this._config.renderer.width);
-  }
-
-  get _touchingTopOrBottom() {
-    return (this.sprite.position.y + this.velocity.y <= 0 || this.sprite.position.y + this.sprite.height + this.velocity.y >= this._config.renderer.height);
-  }
-
   update(deltaTime) {
     this.lifespan -= 1 * deltaTime;
 
     this.sprite.position.x += (this.velocity.x * this._config.particle.speed) * deltaTime;
     this.sprite.position.y += (this.velocity.y * this._config.particle.speed) * deltaTime;
 
-    if (this._touchingTopOrBottom) {
+    if (this.sprite.position.y + this.velocity.y <= 0 || this.sprite.position.y + this.sprite.height + this.velocity.y >= this._config.renderer.height) {
       this.velocity.y = this.velocity.y * -1;
       this.touched = true;
     }
-    if (this._touchingLeftOrRight) {
+    if (this.sprite.position.x + this.velocity.x <= 0 || this.sprite.position.x + this.sprite.width + this.velocity.x >= this._config.renderer.width) {
       this.velocity.x = this.velocity.x * -1;
       this.touched = true;
     }

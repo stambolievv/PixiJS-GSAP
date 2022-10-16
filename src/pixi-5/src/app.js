@@ -15,5 +15,5 @@ app.loader
   .load(({ resources }) => {
     controller.createRockets(resources);
 
-    app.ticker.add((deltaTime) => controller.updateRockets(deltaTime));
+    app.ticker.add(deltaTime => controller.updateRockets(deltaTime));
   });

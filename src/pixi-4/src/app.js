@@ -25,5 +25,5 @@ app.loader
     controller.createSlider();
     controller.createMovieFrame(app.renderer, resources);
 
-    app.ticker.add((deltaTime) => controller.updateMovieFrame(deltaTime));
+    app.ticker.add(deltaTime => controller.updateMovieFrame(deltaTime));
   });

@@ -9,7 +9,7 @@ export default class Controller {
   }
 
   createCircle(mouse) {
-    if (this.circles.length >= this._config.circle.intensity) { return; }
+    if (this.circles.length >= this._config.circle.intensity) return;
 
     for (let i = 0; i < this._config.circle.intensity; i++) {
       this.circles.push(new Circle(this._config, this._stage, mouse));

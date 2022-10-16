@@ -38,6 +38,7 @@ function setHeadingText(headingData, mainData) {
 
       return config.crawl.heading.ease.delay -= 0.1;
     }
+
     headingText.y -= config.crawl.heading.ease.in * 0.001;
     headingText.scale.x = headingText.scale.y += config.crawl.heading.ease.in * 0.001;
     headingText.alpha += (config.crawl.heading.ease.in / config.crawl.heading.ease.size) * 0.001;
@@ -53,7 +54,7 @@ function setMainText(mainData) {
   stage.addChild(mainText);
 
   app.ticker.add((deltaTime) => {
-    if (mainText.y < -config.renderer.height * 2) { mainText.y = config.renderer.height * 5; }
+    if (mainText.y < -config.renderer.height * 2) mainText.y = config.renderer.height * 5;
     mainText.y -= config.crawl.main.scrolling.speed * deltaTime;
   });
 }

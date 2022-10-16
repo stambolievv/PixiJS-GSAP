@@ -14,5 +14,5 @@ app.loader
   .load(({ resources }) => {
     controller.createParticle(resources);
 
-    app.ticker.add((deltaTime) => controller.updateParticle(deltaTime));
+    app.ticker.add(deltaTime => controller.updateParticle(deltaTime));
   });

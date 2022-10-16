@@ -20,8 +20,8 @@ export default class Controller {
       const spawnPoint = { x: ((this._config.renderer.width - data.length * (texture.width / 2)) / data.length) * (index + 1), y: this._config.renderer.height - texture.height };
       const rocketData = { 'name': rocket.name, 'fuel': rocket.first_stage.fuel_amount_tons + rocket.second_stage.fuel_amount_tons };
 
-      if (rocket.type == 'rocket') { return this.rockets.push(new Rocket(this._config, this._stage, texture, spawnPoint, rocketData)); }
-      if (rocket.type == 'merlin') { return this.rockets.push(new Merlin(this._config, this._stage, texture, spawnPoint, rocketData)); }
+      if (rocket.type == 'rocket') return this.rockets.push(new Rocket(this._config, this._stage, texture, spawnPoint, rocketData));
+      if (rocket.type == 'merlin') return this.rockets.push(new Merlin(this._config, this._stage, texture, spawnPoint, rocketData));
     });
 
     return this._start();

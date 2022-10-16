@@ -10,13 +10,12 @@ app.stage.addChild(stage);
 const controller = new Controller(config, stage);
 const mouse = { x: undefined, y: undefined };
 
-app.ticker.add((deltaTime) => {
-  controller.createCircle( mouse);
+app.ticker.add(deltaTime => {
+  controller.createCircle(mouse);
   controller.updateCircles(deltaTime);
 });
 
-
-app.renderer.view.addEventListener('mousemove', e => {
+app.renderer.view.addEventListener('pointermove', e => {
   mouse.x = e.offsetX;
   mouse.y = e.offsetY;
 });

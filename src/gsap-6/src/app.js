@@ -21,16 +21,16 @@ const drag = Draggable.create(button, {
 
 const message = document.querySelector('.unlock');
 function unlocking() {
-  if (drag[0].endX < maxDist - config.swiper.offsetSnap) { return; }
+  if (drag[0].endX < maxDist - config.swiper.offsetSnap) return;
 
   gsap.set(message, { color: config.message.color });
   gsap.timeline()
-    .to(button, { duration: 0, x: maxDist, onCompleat: () => { drag[0].disable(); } })
+    .to(button, { duration: 0, x: maxDist, onCompleat: () => drag[0].disable() })
     .to(message, { duration: 1, opacity: 1 })
     .then(() => returning(true));
 }
 function returning(bypass = false) {
-  if (!bypass && drag[0].endX >= maxDist - config.swiper.offsetSnap) { return; }
+  if (!bypass && drag[0].endX >= maxDist - config.swiper.offsetSnap) return;
 
   gsap.to(button, { duration: 2, x: 0, ease: 'power4.out' });
   gsap.to(message, { duration: 1, opacity: 0 });

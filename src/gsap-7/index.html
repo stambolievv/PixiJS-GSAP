@@ -3,26 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="google" content="notranslate" />
-    <link rel="stylesheet" href="./assets/styles/style.css">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title -->
     <title>GSAP Project 7</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js" defer></script>
-    <script type="module" src="./src/app.js"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <!-- Icon -->
+    <link rel="shortcut icon" href="../../assets/images/favicon.ico" type="image/x-icon"/>
+    <!-- Meta -->
+    <meta name="title" content="GSAP Project 7" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="GSAP Project 7" />
+    <meta name="application-name" content="GSAP Project 7" />
+    <meta name="description" content="Smooth animation of a shopping process. Pause and reverse buttons." />
+    <!-- Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" defer></script>
+    <script type="module" src="./src/app.js" defer></script>
   </head>
   <body>
-    <svg id='ship-it' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg id="ship-it" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 400 400" xmlns:xlink="http://www.w3.org/1999/xlink">
       <defs>
-        <mask id='btn-mask'>
+        <mask id="btn-mask">
           <use fill="#FFFFFF" xlink:href="#path-1"/>
         </mask>
         <rect id="path-1" width="219" height="60" rx="8"/>
-        <filter id="filter-2" width="106.8%" height="125%" x="-3.4%" y="-7.5%" filterUnits="objectBoundingBox">
-          <feOffset dy="3" in="SourceAlpha" result="shadowOffsetOuter1"/>
-          <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
-          <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" in="shadowBlurOuter1"/>
+        <filter id="filter-2" width="106.8%" height="125%" x="-3.4%" y="-7.5%" filterunits="objectBoundingBox">
+          <feoffset dy="3" in="SourceAlpha" result="shadowOffsetOuter1"/>
+          <fegaussianblur stddeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+          <fecolormatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" in="shadowBlurOuter1"/>
         </filter>
       </defs>
       <g id="Page-1" fill="none" fill-rule="evenodd">
@@ -71,7 +81,7 @@
                 </g>
               </g>
             </g>
-            <g data-anim="btn-shipped" transform="translate(93.09 271.165)" class='hidden'>
+            <g data-anim="btn-shipped" transform="translate(93.09 271.165)" class="hidden">
               <rect id="btn-fill" width="205.88" height="56.4" x="1.56" y="1.8" fill="#4EB7B2" rx="8"/>
               <path id="btn-dash" fill="#44A29E" fill-rule="nonzero" d="M3.06 9.8c0 .82-.67 1.5-1.5 1.5S.06 10.6.06 9.8c0-2.9 1.3-5.55 3.47-7.34.64-.53 1.58-.44 2.1.2.54.64.44 1.6-.2 2.1C3.93 6 3.06 7.83 3.06 9.8zm8.02-6.5h7c.83 0 1.5-.67 1.5-1.5S18.9.3 18.08.3h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5S32.9.3 32.08.3h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5S46.9.3 46.08.3h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5S60.9.3 60.08.3h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5S74.9.3 74.08.3h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5S88.9.3 88.08.3h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h7c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm14 0h6.35c.18 0 .35 0 .53.02.83.07 1.55-.55 1.6-1.38.08-.82-.53-1.55-1.36-1.6-.26-.03-.5-.04-.77-.04h-6.35c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5zm11.7 2.8c.75 1.07 1.16 2.35 1.16 3.7v2.15c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V9.8c0-1.97-.6-3.84-1.7-5.42-.47-.68-1.4-.84-2.08-.37-.68.48-.85 1.42-.38 2.1zm1.16 12.85v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.82-.67-1.5-1.5-1.5s-1.5.68-1.5 1.5zm0 14v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.82-.67-1.5-1.5-1.5s-1.5.68-1.5 1.5zm0 14v3.26c0 1.05-.25 2.06-.7 2.97-.4.73-.1 1.64.64 2 .74.4 1.64.1 2.02-.64.68-1.32 1.04-2.8 1.04-4.32v-3.25c0-.82-.67-1.5-1.5-1.5s-1.5.68-1.5 1.5zm-5.14 9.6c-.44.1-.9.15-1.37.15h-5.25c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.25c.68 0 1.35-.07 2-.2.8-.18 1.33-.98 1.15-1.8-.17-.8-.97-1.3-1.78-1.14zm-13.62.15h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-14 0h-7c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h7c.82 0 1.5-.67 1.5-1.5s-.68-1.5-1.5-1.5zm-13.04-.97C4.5 54.7 3.37 53 3.12 51.07c-.1-.82-.86-1.4-1.7-1.3-.8.12-1.38.87-1.28 1.7.38 2.82 2 5.3 4.4 6.8.72.44 1.64.22 2.08-.48.44-.7.22-1.64-.48-2.07zM3.06 44.3v-7c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5zm0-14v-7c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5zm0-14c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5V9.8c0-.84.67-1.5 1.5-1.5s1.5.66 1.5 1.5v6.5z"/>
               <path id="label" fill="#309490" d="M51.47 32.62c0-.42-.15-.76-.45-1-.3-.23-.83-.48-1.6-.73-.75-.27-1.37-.5-1.85-.75-1.57-.77-2.35-1.83-2.35-3.17 0-.67.2-1.26.6-1.77.38-.5.93-.9 1.64-1.2.72-.27 1.52-.42 2.4-.42.88 0 1.66.16 2.35.47.7.3 1.23.75 1.6 1.32.4.57.6 1.23.6 1.97h-2.92c0-.5-.15-.88-.45-1.15-.3-.28-.7-.42-1.23-.42-.52 0-.93.12-1.23.35-.3.23-.45.52-.45.87 0 .3.16.6.5.85.33.25.9.5 1.75.78.83.26 1.52.55 2.06.86 1.3.75 1.96 1.78 1.96 3.1 0 1.06-.4 1.9-1.2 2.5-.8.6-1.9.9-3.3.9-.97 0-1.85-.17-2.65-.53-.8-.35-1.4-.83-1.8-1.44-.4-.6-.6-1.32-.6-2.1h2.93c0 .63.17 1.1.5 1.42.34.3.88.46 1.63.46.5 0 .87-.1 1.15-.3.28-.2.42-.5.42-.88zm18.5 3.22H67.1V30.8h-4.3v5.04h-2.92v-12.1h2.9v4.8h4.3v-4.8H70v12.1zm8.96 0h-2.9v-12.1h2.9v12.1zm8.94-4.1v4.1h-2.92v-12.1h4.83c.92 0 1.74.18 2.45.52.7.34 1.26.82 1.65 1.45.4.64.6 1.35.6 2.15 0 1.18-.43 2.12-1.28 2.83-.84.7-2 1.05-3.47 1.05h-1.86zm0-2.25h1.9c.57 0 1-.16 1.3-.44.3-.28.44-.68.44-1.2 0-.56-.14-1-.44-1.35-.3-.32-.72-.5-1.25-.5h-1.93v3.5zm15.06 2.23v4.1h-2.9V23.76h4.8c.94 0 1.75.17 2.47.5.7.35 1.26.83 1.65 1.46.4.64.58 1.35.58 2.15 0 1.18-.42 2.12-1.26 2.83-.85.7-2 1.05-3.48 1.05h-1.87zm0-2.24h1.9c.58 0 1-.16 1.3-.44.3-.28.45-.68.45-1.2 0-.56-.15-1-.46-1.35-.3-.32-.72-.5-1.24-.5h-1.95v3.5zm19.65 1.2H118v2.9h5.4v2.24h-8.32v-12.1h8.35V26H118v2.55h4.58v2.16zm6.02 5.14v-12.1h3.9c1.06 0 2.02.25 2.87.74.85.48 1.52 1.16 2 2.05.48.88.72 1.87.72 2.96v.55c0 1.1-.24 2.1-.7 2.98-.48.87-1.13 1.56-1.98 2.05-.85.5-1.8.75-2.85.76h-3.97zm2.9-9.84v7.6h1.02c.84 0 1.48-.3 1.93-.9.45-.6.67-1.48.67-2.65v-.52c0-1.17-.22-2.05-.67-2.64-.45-.6-1.1-.9-1.96-.9h-1z"/>
@@ -80,17 +90,17 @@
             <g data-anim="truck-btn">
               <g id="truck">
                 <g id="wheels">
-                  <g data-anim="back-wheel-back" class='hidden'>
+                  <g data-anim="back-wheel-back" class="hidden">
                     <g fill="#3B454F" transform="translate(135 326)">
                       <circle id="wheel-part-12" cx="16.91" cy="17.31" r="16.43"/>
                     </g>
                   </g>
-                  <g data-anim="back-wheel-back" class='hidden'>
+                  <g data-anim="back-wheel-back" class="hidden">
                     <g fill="#3B454F" transform="translate(96 326)">
                       <circle id="wheel-part-11" cx="16.91" cy="17.31" r="16.43"/>
                     </g>
                   </g>
-                  <g data-anim="back-wheel" class='hidden'>
+                  <g data-anim="back-wheel" class="hidden">
                     <g transform="translate(115.982 328.368)">
                       <circle id="wheel-part-5" cx="16.93" cy="16.94" r="16.43" fill="#3B454F"/>
                       <circle id="wheel-part-4" cx="18.93" cy="16.94" r="16.43" fill="#516F7A"/>
@@ -99,7 +109,7 @@
                       <path id="wheel-part-1" fill="#3B454F" d="M2.5 16.93c0-3.45 1.07-6.65 2.9-9.3h27.06c1.82 2.65 2.9 5.85 2.9 9.3H2.5z" opacity=".3"/>
                     </g>
                   </g>
-                  <g data-anim="back-wheel" class='hidden'>
+                  <g data-anim="back-wheel" class="hidden">
                     <g transform="translate(154.982 328.368)">
                       <circle id="wheel-part-10" cx="16.93" cy="16.94" r="16.43" fill="#3B454F"/>
                       <circle id="wheel-part-9" cx="18.93" cy="16.94" r="16.43" fill="#516F7A"/>
@@ -109,12 +119,12 @@
                     </g>
                   </g>
                 </g>
-                <g data-anim="front-group" class='hidden'>
+                <g data-anim="front-group" class="hidden">
                   <g transform="translate(293 281)">
-                    <g data-anim="front-wheel-back" class='hidden'>
+                    <g data-anim="front-wheel-back" class="hidden">
                       <circle cx="16.91" cy="62.31" r="16.43" fill="#3B454F"/>
                     </g>
-                    <g data-anim="front-wheel" class='hidden'>
+                    <g data-anim="front-wheel" class="hidden">
                       <g transform="translate(19.982 47.368)">
                         <circle id="front-wheel-part-5" cx="16.93" cy="16.94" r="16.43" fill="#3B454F"/>
                         <circle id="front-wheel-part-4" cx="18.93" cy="16.94" r="16.43" fill="#516F7A"/>
@@ -141,7 +151,7 @@
                       </g>
                       <path id="front-wheel-shadow" fill="#728691" d="M55.02 57H20.8c2.6-6.9 9.28-11.83 17.1-11.83 7.83 0 14.5 4.92 17.12 11.83z"/>
                     </g>
-                    <g data-anim="front-wheel" class='hidden'>
+                    <g data-anim="front-wheel" class="hidden">
                       <g transform="translate(19.982 47.368)">
                         <circle id="front-wheel-part-5" cx="16.93" cy="16.94" r="16.43" fill="#3B454F"/>
                         <circle id="front-wheel-part-4" cx="18.93" cy="16.94" r="16.43" fill="#516F7A"/>
@@ -152,28 +162,28 @@
                     </g>
                   </g>
                 </g>
-                <g data-anim="container" class='hidden'>
-                  <path data-anim="container-part" class='hidden' fill="#36474F" d="M91 329h216v12H91z"/>
-                  <path data-anim="container-part" class='hidden' fill="#8DA3AE" d="M89 326h218v7c0 2.76-2.23 5-5 5H94c-2.76 0-5-2.23-5-5v-7z"/>
-                  <path data-anim="container-lip" class='hidden' fill="#CFD7DC" d="M89 329h11.16v11c0 1.66-1.35 3-3 3H92c-1.66 0-3-1.34-3-3v-11z"/>
-                  <path data-anim="container-part" class='hidden' fill="#36474F" d="M89 326h217.96l.07 9.3H89z" opacity=".3"/>
+                <g data-anim="container" class="hidden">
+                  <path data-anim="container-part" class="hidden" fill="#36474F" d="M91 329h216v12H91z"/>
+                  <path data-anim="container-part" class="hidden" fill="#8DA3AE" d="M89 326h218v7c0 2.76-2.23 5-5 5H94c-2.76 0-5-2.23-5-5v-7z"/>
+                  <path data-anim="container-lip" class="hidden" fill="#CFD7DC" d="M89 329h11.16v11c0 1.66-1.35 3-3 3H92c-1.66 0-3-1.34-3-3v-11z"/>
+                  <path data-anim="container-part" class="hidden" fill="#36474F" d="M89 326h217.96l.07 9.3H89z" opacity=".3"/>
                   <path fill="#ECAC34" d="M83.9 281c0-4.42 3.57-8.02 8-8.04l207.1-.92c4.42-.02 8 3.55 8 7.97v45c0 4.42-3.57 8-8 8H91.9c-4.42 0-8-3.57-8-8v-44z"/>
                 </g>
               </g>
               <g id="btn" transform="translate(88.09 271.165)">
                 <g id="btn-fill">
-                  <use data-anim='btn-shadow' filter="url(#filter-2)" xlink:href="#path-1"/>
-                  <use data-anim='btn-bg' fill="#FFC14C" xlink:href="#path-1"/>
+                  <use data-anim="btn-shadow" filter="url(#filter-2)" xlink:href="#path-1"/>
+                  <use data-anim="btn-bg" fill="#FFC14C" xlink:href="#path-1"/>
                 </g>
-                <g mask='url(#btn-mask)'>
-                  <circle data-anim="ripple" class='hidden' cx="109.5" cy="30" r="10" fill="#E8A933" transform="matrix(1 0 0 1 219 0)"/>
+                <g mask="url(#btn-mask)">
+                  <circle data-anim="ripple" class="hidden" cx="109.5" cy="30" r="10" fill="#E8A933" transform="matrix(1 0 0 1 219 0)"/>
                 </g>
                 <path data-anim="btn-label" fill="#FFFFFF" d="M73.34 32.62c0-.42-.15-.76-.46-1-.3-.23-.83-.48-1.6-.73-.74-.27-1.36-.5-1.84-.75-1.57-.77-2.35-1.83-2.35-3.17 0-.67.18-1.26.57-1.77.4-.5.94-.9 1.66-1.2.7-.27 1.5-.42 2.4-.42.87 0 1.65.16 2.34.47.7.3 1.23.75 1.6 1.32.4.57.58 1.23.58 1.97h-2.9c0-.5-.16-.88-.46-1.15-.3-.28-.72-.42-1.23-.42-.52 0-.93.12-1.23.35-.3.23-.46.52-.46.87 0 .3.17.6.5.85.33.25.92.5 1.75.78.84.26 1.52.55 2.06.86 1.3.75 1.95 1.78 1.95 3.1 0 1.06-.4 1.9-1.2 2.5-.8.6-1.88.9-3.27.9-.98 0-1.87-.17-2.66-.53-.8-.35-1.4-.83-1.8-1.44-.4-.6-.6-1.32-.6-2.1h2.92c0 .63.17 1.1.5 1.42.34.3.88.46 1.64.46.48 0 .86-.1 1.14-.3.28-.2.42-.5.42-.88zm18.5 3.22h-2.9V30.8h-4.28v5.04h-2.92v-12.1h2.92v4.8h4.3v-4.8h2.9v12.1zm8.95 0h-2.9v-12.1h2.9v12.1zm8.93-4.1v4.1h-2.9v-12.1h4.8c.94 0 1.75.18 2.46.52.7.34 1.26.82 1.65 1.45.4.64.58 1.35.58 2.15 0 1.18-.42 2.12-1.26 2.83-.85.7-2 1.05-3.48 1.05h-1.87zm0-2.25h1.9c.58 0 1-.16 1.3-.44.3-.28.45-.68.45-1.2 0-.56-.16-1-.46-1.35-.3-.32-.72-.5-1.24-.5h-1.95v3.5zm23.5 6.34h-2.9v-12.1h2.9v12.1zM148.48 26h-3.63v9.84h-2.92V26h-3.56v-2.25h10.1V26z"/>
               </g>
             </g>
           </g>
           <g transform="translate(88.09 271.165)">
-            <use data-click='btn' fill="#FFF" xlink:href="#path-1" class='clickable'/>
+            <use data-click="btn" fill="#FFF" xlink:href="#path-1" class="clickable"/>
           </g>
         </g>
       </g>

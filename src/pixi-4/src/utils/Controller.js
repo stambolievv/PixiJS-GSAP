@@ -20,15 +20,13 @@ export default class Controller {
 
   createMovieFrame(renderer, resources) {
     const { clipboard, assets } = Object.entries(resources).reduce((a, [key, value]) => {
-      if (key == 'clipboard') {
+      if (key === 'clipboard') {
         Object.assign(a, { [key]: value.texture });
       } else {
-        if (a.hasOwnProperty('assets')) {
-          a['assets'].push(value.texture);
-        } else {
-          a['assets'] = [value.texture];
-        }
+        if (a.hasOwnProperty('assets')) a['assets'].push(value.texture);
+        else a['assets'] = [value.texture];
       }
+
       return a;
     }, {});
 
@@ -59,7 +57,7 @@ export default class Controller {
     this.sprites.forEach(sprite => {
       sprite.x -= (this.slider.value * this._config.scrolling.multiplier) * deltaTime;
 
-      if (sprite.x + sprite.width / 2 <= 0) { sprite.x += this.clipboard.width * this.sprites.length; }
+      if (sprite.x + sprite.width / 2 <= 0) sprite.x += this.clipboard.width * this.sprites.length;
 
       sprite.filters = this.slider.value >= this._config.scrolling.blur.applyAfter ? [new PIXI.filters.BlurFilterPass(this._config.scrolling.blur.horizontal, this.slider.value, 1)] : [];
     });
