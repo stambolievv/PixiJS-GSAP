@@ -1,0 +1,27 @@
+{
+  "name": "pixijs-gsap",
+  "version": "1.0.0",
+  "description": "PixiJS & GSAP Mini Projects",
+  "private": true,
+  "scripts": {},
+  "author": "Deyan 'stambolievv' Stamboliev",
+  "license": "Apache-2.0",
+  "keywords": [
+    "javascript",
+    "pixijs",
+    "pixi",
+    "gsap"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stambolievv/PixiJS-GSAP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stambolievv/PixiJS-GSAP/issues"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsdoc": "^39.3.3"
+  }
+}
