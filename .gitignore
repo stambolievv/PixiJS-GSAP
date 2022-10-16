@@ -1,0 +1,28 @@
+#---------------------------------------#
+#             Project Ignores           #
+#---------------------------------------#
+
+# Dependency directories
+node_modules/
+package-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode
+
+# Distribution
+dist/
+build/
+public/
+*.zip
+
+# Docmentation
+docs/
+
+# Misc
+*.todo
+todo.*
